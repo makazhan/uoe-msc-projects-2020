@@ -5,7 +5,7 @@
 The shared task data is based on the [Universal Dependencies](https://universaldependencies.org/) (UD) treebanks and follows the same [CoNLL-U format](https://universaldependencies.org/format.html), but due to specifics of the task only words and their morphological analyses are preserved, i.e. lemmata, POS-tags, and morphological features.
 Moreover, UD style morphological annotation is converted to [UniMorph](http://unimorph.org/) (UM) scheme.
 
-For example, this is a sentence from the shared task data (UM):
+For example, this is a sentence from the shared task data:
 <pre>
 # sent_id = 1964
 # text = We need you; whatever you like!
@@ -19,7 +19,7 @@ For example, this is a sentence from the shared task data (UM):
 8	!	!	_	_	_	_	_	_	_
 </pre>
 
-and this is the UD original it was converted from:
+it was converted to UM from this original UD version:
 <pre>
 # sent_id = 1964
 # text = We need you; whatever you like!
@@ -33,8 +33,8 @@ and this is the UD original it was converted from:
 8	!	!	PUNCT	ExclMark	_	7	punct	_	_
 </pre>
 
-The fact that UD version is more generously annotated is not very important to us, as for the task at hand we do not need all those labels.
-Let us now compare just first lines of UM and UD annotations, ignoring those non-essential labels:
+The fact that the UD version is more generously annotated is not very important, as for the task at hand those extra labels are not needed.
+Let us now compare just the first lines of UM and UD annotations, ignoring those non-essential labels:
 <pre>
 UM: 1	We	we	_	_	PL;1;NOM;PRO	_	_	_	_
 UD: 1	We	we	PRON	_	Case=Nom|Number=Plur|Person=1|PronType=Prs	_	_	_	_
@@ -48,11 +48,12 @@ Person=1      → 1;
 PronType=Prs  → N/A.
 </pre>
 Crucially, not all UD features can be mapped to UM and therefore are absent from the shared task data.
+This in turn means that the original UD data cannot be used as a substitute for the shared task data.
 
-**Why all this is important?**
+**Why is all this important?**
 
-Baselines such as UDPipe v1.2, v2 and Lemming are designed to work with ConLL-U (UD) and related formats.
-One must be able to run them directly on the shared task (UM) data, but it is advisible to convert the data back to UD first.
+Baselines such as [UDPipe v1.2](https://github.com/ufal/udpipe), [v2](https://github.com/CoNLL-UD-2018/UDPipe-Future) and [Lemming](https://github.com/lwolfsonkin/lemmingatize) are designed to work with ConLL-U (UD) and related formats.
+One could run them directly on the shared task (UM) data, but it is advisible to convert the data back to UD first.
 At least for Lemming, I have tried both options and concluded that conversion back to UD yields better results.
 
 <hr>
