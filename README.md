@@ -57,7 +57,8 @@ In order to use the shared task data in the original UD format, one must comvert
 
 Baselines such as [UDPipe v1.2](https://github.com/ufal/udpipe), [v2](https://github.com/CoNLL-UD-2018/UDPipe-Future) and [Lemming](https://github.com/lwolfsonkin/lemmingatize) are designed to work with ConLL-U (UD) and related formats.
 Although, I have not tried running those tools directly on the UM data, I suspect there might be issues with that format.
-Instead I have converted UM back to UD. If you decide to use UDPipe and/or Lemming, you can 
+Instead I have converted UM back to UD. If you decide to use UDPipe and/or Lemming, you can use restored UD data from this repo, i.e. `data/restored_ud.zip`.
+
 
 **Data format for Lematus**
 
