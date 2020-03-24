@@ -2,8 +2,10 @@
 
 ## Data
 
+### UM vs UD
+
 The shared task data is based on the [Universal Dependencies](https://universaldependencies.org/) (UD) treebanks and follows the same [CoNLL-U format](https://universaldependencies.org/format.html), but due to specifics of the task only words and their morphological analyses are preserved, i.e. lemmata, POS-tags, and morphological features.
-Moreover, UD style morphological annotation is converted to [UniMorph](http://unimorph.org/) (UM) scheme.
+Moreover, the shared task orgonizers have converted UD style morphological annotation into [UniMorph](http://unimorph.org/) (UM) scheme.
 
 For example, this is a sentence from the shared task data:
 <pre>
@@ -47,8 +49,9 @@ Number=Plur   → PL;
 Person=1      → 1;
 PronType=Prs  → N/A.
 </pre>
-Crucially, not all UD features can be mapped to UM and therefore are absent from the shared task data.
-This in turn means that the original UD data cannot be used as a substitute for the shared task data.
+Crucially, not all UD features was mapped to UM and therefore are absent from the shared task data, e.g. PronType=Prs from the example above has no UM equivalent.
+Thus, one cannot simply replace the shared task treebanks with the original UD equivalents.
+In order to use the shared task data in the original UD format, one must comvert UM back to UD.
 
 **Why is all this important?**
 
