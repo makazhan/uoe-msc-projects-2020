@@ -2,7 +2,7 @@
 
 ## Data
 
-### UM vs UD
+**UM vs UD**
 
 The shared task data is based on the [Universal Dependencies](https://universaldependencies.org/) (UD) treebanks and follows the same [CoNLL-U format](https://universaldependencies.org/format.html), but due to specifics of the task only words and their morphological analyses are preserved, i.e. lemmata, POS-tags, and morphological features.
 Moreover, the shared task orgonizers have converted UD style morphological annotation into [UniMorph](http://unimorph.org/) (UM) scheme.
@@ -51,13 +51,18 @@ PronType=Prs  → N/A.
 </pre>
 Crucially, not all UD features was mapped to UM and therefore are absent from the shared task data, e.g. PronType=Prs from the example above has no UM equivalent.
 Thus, one cannot simply replace the shared task treebanks with the original UD equivalents.
-In order to use the shared task data in the original UD format, one must comvert UM back to UD.
+In order to use the shared task data in the original UD format, one must comvert UM back to UD, which is not trivial.
 
-**Why is all this important?**
+**Why is it important?**
 
 Baselines such as [UDPipe v1.2](https://github.com/ufal/udpipe), [v2](https://github.com/CoNLL-UD-2018/UDPipe-Future) and [Lemming](https://github.com/lwolfsonkin/lemmingatize) are designed to work with ConLL-U (UD) and related formats.
-One could run them directly on the shared task (UM) data, but it is advisible to convert the data back to UD first.
-At least for Lemming, I have tried both options and concluded that conversion back to UD yields better results.
+Although, I have not tried running those tools directly on the UM data, I suspect there might be issues with that format.
+Instead I have converted UM back to UD. If you decide to use UDPipe and/or Lemming, you can 
+
+**Data format for Lematus**
+
+hey!
+
 
 <hr>
 
