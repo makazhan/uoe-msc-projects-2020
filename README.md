@@ -1,6 +1,6 @@
 # Data and Baselines for SIGMORPHON-2019 Shared Task
 
-## Data
+### Data
 
 **UM vs UD**
 
@@ -67,3 +67,21 @@ hey!
 
 <hr>
 
+## Baselines
+
+**Lematus (OpenNMT-py based)**
+
+- **Paper**
+
+[Context Sensitive Neural Lemmatization with Lematus](https://www.aclweb.org/anthology/N18-1126/)
+
+- **Instalation**
+
+To install the latest version follow instructions on the [official repo](https://github.com/OpenNMT/OpenNMT-py).
+The latest version requires Pytorch v1.4, which may not work with cuda v10.1 on some DICE servers.
+If that is the case try re-installing Pytorch with cuda v9.2 (see the [official website](https://pytorch.org/get-started/locally/) for instructions).
+
+- **Data Format**
+
+
+<hr>
