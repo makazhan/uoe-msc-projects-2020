@@ -56,8 +56,9 @@ In order to use the shared task data in the original UD format, one must comvert
 **Data format for UDPipe and Lemming**
 
 Baselines such as [UDPipe v1.2](https://github.com/ufal/udpipe), [v2](https://github.com/CoNLL-UD-2018/UDPipe-Future) and [Lemming](https://github.com/lwolfsonkin/lemmingatize) are designed to work with ConLL-U (UD) and related formats.
-Although, I have not tried running those tools directly on the UM data, I suspect there might be issues with that format.
-Instead I have converted UM back to UD. If you decide to use UDPipe and/or Lemming, you can use restored UD data from this repo, i.e. `data/restored_ud.zip` (there are three parts).
+Although, I have not tried running those tools directly on the UM data, I suspect there might be issues with it.
+Instead I have converted UM data back to UD format.
+If you decide to use UDPipe and/or Lemming, you can use restored UD data from this repo, i.e. `data/restored_ud.zip` (there are three parts).
 
 **Data format for OpenNMT-py**
 
@@ -92,9 +93,13 @@ y o u &lt;lc&gt; l i k e &lt;rc&gt; !                   l i k e +V +FIN +IND +PR
 i k e &lt;lc&gt; ! &lt;rc&gt;                           ! +_
 </pre>
 
-Here one may want to experiment with the type of context that better suits morpho-analysis: parts of words (as in example above), e.g. `v e r <lc> y o u <rc> l i k` or whole words, e.g. `w h a t v e r <lc> y o u <rc> l i k e`.
+It may be worth thinkig about (or experimenting with) the type of context that better suits morpho-analysis: parts of words (as in example above), e.g. `v e r <lc> y o u <rc> l i k` or whole words, e.g. `w h a t v e r <lc> y o u <rc> l i k e`.
 
+Also, the order of tags in UM data is not fixed, i.e. tags may appear in different order for the same analysis, e.g. `w e +PL +1 +NOM +PRO`, `w e +PRO +PL +NOM +1`, etc.
+This is just for your information, and may or may not be an issue. 
+I have applied a very basic ordering and did not work with unordered data.
 
+<hr>
 
 ## Baselines
 
