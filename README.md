@@ -49,7 +49,7 @@ Number=Plur   → PL;
 Person=1      → 1;
 PronType=Prs  → N/A.
 </pre>
-Crucially, not all UD features was mapped to UM and therefore are absent from the shared task data, e.g. PronType=Prs from the example above has no UM equivalent.
+Crucially, not all UD features were mapped to UM and therefore are absent from the shared task data, e.g. PronType=Prs from the example above has no UM equivalent.
 Thus, one cannot simply replace the shared task treebanks with the original UD equivalents.
 In order to use the shared task data in the original UD format, one must comvert UM back to UD, which is not trivial.
 
@@ -96,8 +96,16 @@ i k e &lt;lc&gt; ! &lt;rc&gt;                           ! +_
 It may be worth thinkig about (or experimenting with) the type of context that better suits morpho-analysis: parts of words (as in example above), e.g. `v e r <lc> y o u <rc> l i k` or whole words, e.g. `w h a t v e r <lc> y o u <rc> l i k e`.
 
 Also, the order of tags in UM data is not fixed, i.e. tags may appear in different order for the same analysis, e.g. `w e +PL +1 +NOM +PRO`, `w e +PRO +PL +NOM +1`, etc.
-This is just for your information, and may or may not be an issue. 
-I have applied a very basic ordering and did not work with unordered data.
+This is just for your information.
+I have not run any comparative experiments with unordered vs ordered data, so I cannot tell if there is an issue with lack of ordering.
+
+Lastly, mind the whitespace!
+There might be spaces inside word forms or lemmata due to annotation errors or specifics of the writing system, e.g. Vietnamese syllables are written space-separated an it is common to encounter words and lemmata that contain spaces: 
+<pre>
+...
+8       nhà nghỉ        nhà nghỉ        _       _       N       _       _       _       _
+...
+</pre>
 
 <hr>
 
