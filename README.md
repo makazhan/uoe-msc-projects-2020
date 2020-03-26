@@ -53,19 +53,48 @@ Crucially, not all UD features was mapped to UM and therefore are absent from th
 Thus, one cannot simply replace the shared task treebanks with the original UD equivalents.
 In order to use the shared task data in the original UD format, one must comvert UM back to UD, which is not trivial.
 
-**Why is it important?**
+**Data format for UDPipe and Lemming**
 
 Baselines such as [UDPipe v1.2](https://github.com/ufal/udpipe), [v2](https://github.com/CoNLL-UD-2018/UDPipe-Future) and [Lemming](https://github.com/lwolfsonkin/lemmingatize) are designed to work with ConLL-U (UD) and related formats.
 Although, I have not tried running those tools directly on the UM data, I suspect there might be issues with that format.
-Instead I have converted UM back to UD. If you decide to use UDPipe and/or Lemming, you can use restored UD data from this repo, i.e. `data/restored_ud.zip`.
+Instead I have converted UM back to UD. If you decide to use UDPipe and/or Lemming, you can use restored UD data from this repo, i.e. `data/restored_ud.zip` (there are three parts).
+
+**Data format for OpenNMT-py**
+
+OpenNMT-py expects the input in two separate files: source and target.
+This applies to all data splits: train, dev, and test.
+For instance, our example sentence pre-processed for Lematus with 3 character context window might look like this:
+
+<pre>
+source file:                                target file:
+&lt;lc&gt; W e &lt;rc&gt; n e e                         w e
+W e &lt;lc&gt; n e e d &lt;rc&gt; y o u                 n e e d
+e e d &lt;lc&gt; y o u &lt;rc&gt; ; &lt;s&gt; w               y o u
+y o u &lt;lc&gt; ; &lt;rc&gt; w h a                     ;
+u &lt;s&gt; ; &lt;lc&gt; w h a t e v e r &lt;rc&gt; y o u     w h a t e v e r
+v e r &lt;lc&gt; y o u &lt;rc&gt; l i k                 y o u
+y o u &lt;lc&gt; l i k e &lt;rc&gt; !                   l i k e
+i k e &lt;lc&gt; ! &lt;rc&gt;                           !
+</pre>
+
+There are several ways to incorporate morpho-tags into this set up, if your goal is morpho-analysis.
+An obvious one is just to add the tags to the target side, e.g.:
+
+<pre>
+source file:                                target file:
+&lt;lc&gt; W e &lt;rc&gt; n e e                         w e +PL +1 +NOM +PRO
+W e &lt;lc&gt; n e e d &lt;rc&gt; y o u                 n e e d +V +FIN +IND +PRS
+e e d &lt;lc&gt; y o u &lt;rc&gt; ; &lt;s&gt; w               y o u +PRO
+y o u &lt;lc&gt; ; &lt;rc&gt; w h a                     ; +_
+u &lt;s&gt; ; &lt;lc&gt; w h a t e v e r &lt;rc&gt; y o u     w h a t e v e r +PRO
+v e r &lt;lc&gt; y o u &lt;rc&gt; l i k                 y o u +PRO
+y o u &lt;lc&gt; l i k e &lt;rc&gt; !                   l i k e +V +FIN +IND +PRS
+i k e &lt;lc&gt; ! &lt;rc&gt;                           ! +_
+</pre>
+
+Here one may want to experiment with the type of context that better suits morpho-analysis: parts of words (as in example above), e.g. `v e r <lc> y o u <rc> l i k` or whole words, e.g. `w h a t v e r <lc> y o u <rc> l i k e`.
 
 
-**Data format for Lematus**
-
-hey!
-
-
-<hr>
 
 ## Baselines
 
