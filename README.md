@@ -113,17 +113,49 @@ There might be spaces inside word forms or lemmata due to annotation errors or s
 
 **Lematus (OpenNMT-py based)**
 
-- **Paper**
+- Paper
 
 [Context Sensitive Neural Lemmatization with Lematus](https://www.aclweb.org/anthology/N18-1126/)
 
-- **Instalation**
+- Instalation
 
 To install the latest version follow instructions on the [official repo](https://github.com/OpenNMT/OpenNMT-py).
 The latest version requires Pytorch v1.4, which may not work with cuda v10.1 on some DICE servers.
 If that is the case try re-installing Pytorch with cuda v9.2 (see the [official website](https://pytorch.org/get-started/locally/) for instructions).
 
-- **Data Format**
+- Testing
+
+To test your instalation you can try running the following test scripts located at `baselines/onmtpy/`:
+
+-- `dp.sh` - standard OpenNMT data preprocessing;
+
+-- `train_gpu.sh` / `train_cpu.sh` - training a default OpenNMT seq2seq architecture on gpu/cpu.
 
 
-<hr>
+**UDPipe**
+
+- Paper
+
+Version 2 (one of the top performing shared task submissions are based on this version): [UDPipe 2.0 Prototype at CoNLL 2018 UD Shared Task](https://www.aclweb.org/anthology/K18-2020/)
+
+Version 1.2: [UDPipe: Trainable Pipeline for Processing CoNLL-U Files Performing Tokenization, Morphological Analysis, POS Tagging and Parsing](https://www.aclweb.org/anthology/L16-1680/)
+
+- Instalation
+
+The easiest way to work with version 1.2 is just to download the binaries (executables) for your system from https://github.com/ufal/udpipe/releases/.
+
+
+
+To install the latest version follow instructions on the [official repo](https://github.com/OpenNMT/OpenNMT-py).
+The latest version requires Pytorch v1.4, which may not work with cuda v10.1 on some DICE servers.
+If that is the case try re-installing Pytorch with cuda v9.2 (see the [official website](https://pytorch.org/get-started/locally/) for instructions).
+
+- Testing
+
+To test your instalation you can try running the following test scripts located at `baselines/onmtpy/`:
+
+-- `dp.sh` - standard OpenNMT data preprocessing;
+
+-- `train_gpu.sh` / `train_cpu.sh` - training a default OpenNMT seq2seq architecture on gpu/cpu.
+
+
