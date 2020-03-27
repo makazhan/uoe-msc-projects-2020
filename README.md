@@ -100,7 +100,7 @@ This is just for your information.
 I have not run any comparative experiments with unordered vs ordered data, so I cannot tell if there is an issue with lack of ordering.
 
 Lastly, mind the whitespace!
-There might be spaces inside word forms or lemmata due to annotation errors or specifics of the writing system, e.g. Vietnamese syllables are written space-separated an it is common to encounter words and lemmata that contain spaces: 
+There might be spaces inside word forms or lemmata due to annotation errors or specifics of the writing system, e.g. Vietnamese syllables are written space-separated; hence it is common to encounter words and lemmata that contain spaces: 
 <pre>
 ...
 8       nhà nghỉ        nhà nghỉ        _       _       N       _       _       _       _
