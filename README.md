@@ -144,18 +144,15 @@ Version 1.2: [UDPipe: Trainable Pipeline for Processing CoNLL-U Files Performing
 
 The easiest way to work with version 1.2 is just to download the binaries (executables) for your system from https://github.com/ufal/udpipe/releases/.
 
-
-
-To install the latest version follow instructions on the [official repo](https://github.com/OpenNMT/OpenNMT-py).
-The latest version requires Pytorch v1.4, which may not work with cuda v10.1 on some DICE servers.
-If that is the case try re-installing Pytorch with cuda v9.2 (see the [official website](https://pytorch.org/get-started/locally/) for instructions).
+Likewise, just clone the [official repo](https://github.com/CoNLL-UD-2018/UDPipe-Future) to work with version 2.
+This version requires tensorflow.
 
 - Testing
 
-To test your instalation you can try running the following test scripts located at `baselines/onmtpy/`:
+To test version 1.2 try running `train.sh` and `predict.sh` scripts located at `baselines/udpipe/v1.2`.
+`train.sh` produces the train log in a silent mode, whcih you can monitor on Linux with `tail -f en_gum.log` command.
 
--- `dp.sh` - standard OpenNMT data preprocessing;
-
--- `train_gpu.sh` / `train_cpu.sh` - training a default OpenNMT seq2seq architecture on gpu/cpu.
-
+To test version 2 `train_gpu.sh` and `predict_gpu.sh` scripts located at `baselines/udpipe/v2`.
+Both scripts require GPU id as an argument; pass 0 if unsure.
+Alternatively, you may try testing on CPU via `train_cpu.sh` and `predict_cpu.sh` scripts that expect no arguments.
 
