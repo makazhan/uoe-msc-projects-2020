@@ -150,11 +150,11 @@ This version requires tensorflow.
 - Testing
 
 To test version 1.2 try running `train.sh` and `predict.sh` scripts located at `baselines/udpipe/v1.2`.
-Before running the scripts replace `bin/bin-linux64/udpipe` with whatever path you have put the Udpipe binaries that you downloaded at the intsallation step.
+Before running the scripts replace `bin/bin-linux64/udpipe` with whatever path you have put the Udpipe binaries that you downloaded at the installation step.
 `train.sh` produces a log in the silent mode, which you can monitor on Linux with `tail -f en_gum.log` command.
 
 To test version 2 try running `train_gpu.sh` and `predict_gpu.sh` scripts located at `baselines/udpipe/v2`.
-Again, replace 'src/ud_parser.py' with the path you have cloned the repository at the instalation step.
+Again, replace 'src/ud_parser.py' with the path you have cloned the repository at the installation step.
 Both scripts require GPU id as an argument; pass 0 if unsure.
 Alternatively, you may try testing on CPU via `train_cpu.sh` and `predict_cpu.sh` scripts that expect no arguments.
 
@@ -171,12 +171,12 @@ I have used Lemmingatize, a Python wrapper over Lemming.
 This requires installation from source.
 The instructions on the [official repo](https://github.com/lwolfsonkin/lemmingatize) did not work for me.
 Specifically, cloning the repo with sub-modules failed.
-A workaraound is just to clone the repo the usual way and then replace `lemmingatize/lib/cistern` with `https://github.com/muelletm/cistern` (just clone it into `lemmingatize/lib`).
+A workaround is just to clone the repo the usual way and then replace `lemmingatize/lib/cistern` with https://github.com/muelletm/cistern (just clone it into `lemmingatize/lib`).
 After that run `setup.sh`.
 
 - Testing
 
 Try running `train.sh` and `predict.sh` located at `baselines/lemming`.
-Replace `./lemmingatize/lemming` with whetever path you have installed `lemmingatize` to.
+Replace `./lemmingatize/lemming` with whatever path you have installed `lemmingatize` to.
 
 Warning! Lemming is very memory-hungry, test on servers if you can.
