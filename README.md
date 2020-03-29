@@ -5,7 +5,7 @@
 **UM vs UD**
 
 The shared task data is based on the [Universal Dependencies](https://universaldependencies.org/) (UD) treebanks and follows the same [CoNLL-U format](https://universaldependencies.org/format.html), but due to specifics of the task only words and their morphological analyses are preserved, i.e. lemmata, POS-tags, and morphological features.
-Moreover, the shared task orgonizers have converted UD style morphological annotation into [UniMorph](http://unimorph.org/) (UM) scheme.
+Moreover, the shared task organizers have converted UD style morphological annotation into [UniMorph](http://unimorph.org/) (UM) scheme.
 
 For example, this is a sentence from the shared task data:
 <pre>
@@ -51,7 +51,7 @@ PronType=Prs  → N/A.
 </pre>
 Crucially, not all UD features were mapped to UM and therefore are absent from the shared task data, e.g. PronType=Prs from the example above has no UM equivalent.
 Thus, one cannot simply replace the shared task treebanks with the original UD equivalents.
-In order to use the shared task data in the original UD format, one must comvert UM back to UD, which is not trivial.
+In order to use the shared task data in the original UD format, one must convert UM back to UD, which is not trivial.
 
 **Data format for UDPipe and Lemming**
 
@@ -64,7 +64,7 @@ If you decide to use UDPipe and/or Lemming, you can use restored UD data from th
 
 OpenNMT-py expects the input in two separate files: source and target.
 This applies to all data splits: train, dev, and test.
-For instance, our example sentence pre-processed for Lematus with 3 character context window might look like this:
+For instance, our example sentence pre-processed for Lematus with 3 characters context window might look like this:
 
 <pre>
 source file:                                target file:
@@ -93,7 +93,7 @@ y o u &lt;lc&gt; l i k e &lt;rc&gt; !                   l i k e +V +FIN +IND +PR
 i k e &lt;lc&gt; ! &lt;rc&gt;                           ! +_
 </pre>
 
-It may be worth thinkig about (or experimenting with) the type of context that better suits morpho-analysis: parts of words (as in example above), e.g. `v e r <lc> y o u <rc> l i k` or whole words, e.g. `w h a t v e r <lc> y o u <rc> l i k e`.
+It may be worth thinking about (or experimenting with) the type of context that better suits morpho-analysis: parts of words (as in example above), e.g. `v e r <lc> y o u <rc> l i k` or whole words, e.g. `w h a t v e r <lc> y o u <rc> l i k e`.
 
 Also, the order of tags in UM data is not fixed, i.e. tags may appear in different order for the same analysis, e.g. `w e +PL +1 +NOM +PRO`, `w e +PRO +PL +NOM +1`, etc.
 This is just for your information.
@@ -117,7 +117,7 @@ There might be spaces inside word forms or lemmata due to annotation errors or s
 
 [Context Sensitive Neural Lemmatization with Lematus](https://www.aclweb.org/anthology/N18-1126/)
 
-- Instalation
+- Installation
 
 To install the latest version follow instructions on the [official repo](https://github.com/OpenNMT/OpenNMT-py).
 The latest version requires Pytorch v1.4, which may not work with cuda v10.1 on some DICE servers.
@@ -125,7 +125,7 @@ If that is the case try re-installing Pytorch with cuda v9.2 (see the [official 
 
 - Testing
 
-To test your instalation you can try running the following test scripts located at `baselines/onmtpy/`:
+To test your installation you can try running the following test scripts located at `baselines/onmtpy/`:
 
 -- `dp.sh` - standard OpenNMT data preprocessing;
 
@@ -140,7 +140,7 @@ Version 2 (one of the top performing shared task submissions are based on this v
 
 Version 1.2: [UDPipe: Trainable Pipeline for Processing CoNLL-U Files Performing Tokenization, Morphological Analysis, POS Tagging and Parsing](https://www.aclweb.org/anthology/L16-1680/)
 
-- Instalation
+- Installation
 
 The easiest way to work with version 1.2 is just to download the binaries (executables) for your system from https://github.com/ufal/udpipe/releases/.
 
@@ -150,9 +150,9 @@ This version requires tensorflow.
 - Testing
 
 To test version 1.2 try running `train.sh` and `predict.sh` scripts located at `baselines/udpipe/v1.2`.
-`train.sh` produces the train log in a silent mode, whcih you can monitor on Linux with `tail -f en_gum.log` command.
+`train.sh` produces the train log in a silent mode, which you can monitor on Linux with `tail -f en_gum.log` command.
 
-To test version 2 `train_gpu.sh` and `predict_gpu.sh` scripts located at `baselines/udpipe/v2`.
+To test version 2 try running `train_gpu.sh` and `predict_gpu.sh` scripts located at `baselines/udpipe/v2`.
 Both scripts require GPU id as an argument; pass 0 if unsure.
 Alternatively, you may try testing on CPU via `train_cpu.sh` and `predict_cpu.sh` scripts that expect no arguments.
 
