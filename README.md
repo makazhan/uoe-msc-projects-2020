@@ -131,7 +131,7 @@ To test your installation you can try running the following test scripts located
 
 -- `train_gpu.sh` / `train_cpu.sh` - training a default OpenNMT seq2seq architecture on gpu/cpu.
 
-One thing to note here is that you can specify the maximum length of the source and target sequences.
+One thing to note here is that you can specify the maximum length of the source and target sequences at the data pre-processing step.
 If those values are not set, the sequences will be truncated, if too long, at default length of 50.
 
 
