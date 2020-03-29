@@ -1,0 +1,1 @@
+./lemmingatize/lemming annotate --java_heap_limit 250 --marmot_model models/full/model.marmot --lemming_model models/full/model.lemming --input_file ../data-sample/UD_English-GUM/en_gum-ud-dev.conllu --pred_file out.conllu &> models/prd.err &

@@ -1,0 +1,1 @@
+bin/bin-linux64/udpipe --tokenizer "none" --tagger "iterations=10;use_xpostag=0;provide_xpostag=0" --parser "none" --train en_gum.mdl --heldout ../../data-sample/UD_English-GUM/en_gum-ud-dev.conllu < ../../data-sample/UD_English-GUM/en_gum-ud-train.conllu  &> en_gum.log &
